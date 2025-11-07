@@ -1,0 +1,89 @@
+import tkinter as tk
+from tkinter import messagebox
+import datetime
+from tkcalendar import DateEntry
+from tkinter import ttk
+
+
+# this is where I add the actual PLEASE items. 
+PLEASE_ITEMS = [
+    "I took care of my physical health 💊 🩺 ",
+    "I tried to eat healthy 🌱 🍉",
+    "I avoided mood-altering substances 👍 🌟",
+    "I slept well 🌙 💤",
+    "I exercised 🚴‍♀️ 💪",
+]
+
+# main window, name of application
+root = tk.Tk()
+root.title("If You PLEASE")
+root.geometry("400x600")
+root.configure(bg="#6495ED")
+
+# general greeting for my users
+title_label = tk.Label(root, text="Hi! How are you doing today? 🌈", font=("Helvetica", 16), bg="#6495ED", fg="white")
+title_label.pack(pady=20)
+
+
+# checkboxes for the PLEASE, users to select
+check_vars = {}
+for item in PLEASE_ITEMS:
+    var = tk.IntVar()
+    check_vars[item] = var
+    frame = tk.Frame(root, bg="#6495ED")
+    frame.pack(anchor='w', padx=20)
+    cb = tk.Checkbutton(frame, text=item, variable=var, font=("Helvetica", 12), bg="#6495ED", fg="white", selectcolor="#87CEFA")
+    cb.pack(side="left")
+
+
+
+# notes for users to jot down additional thoughts
+notes_label = ttk.Label(root, text="Anything you wanna note down?:", font=("Helvetica", 12))
+notes_label.pack(pady=(20, 0))
+
+notes_entry = tk.Text(root, height=4, width=40)
+notes_entry.pack()
+
+# calender and date selection
+date_label = tk.Label(root, text="Select the date:", font=("Helvetica", 12))
+date_label.pack(pady=(10, 0))
+
+date_entry = DateEntry(root, width=12, background='darkblue',
+                       foreground='white', borderwidth=2, font=("Helvetica", 12))
+date_entry.pack(pady=(0, 10))
+
+# selecting mood emojis
+mood_label = tk.Label(root, text="What's your mood today?:", font=("Helvetica", 12))
+mood_label.pack(pady=(20, 5))
+
+#  mood emoji options
+moods = {
+    "So Happy": "🥳",
+    "Pretty Good": "☺️",
+    "Neutral": "😐",
+    "Sad": "🙁",
+    "Angry": "😡"
+}
+selected_mood = tk.StringVar(value="")
+
+# the frames and actual buttons to house mood emojis
+mood_frame = tk.Frame(root)
+mood_frame.pack()
+
+def set_mood(mood):
+    selected_mood.set(mood)
+
+for mood, emoji in moods.items():
+    btn = tk.Button(
+        mood_frame,
+        text=emoji,
+        command=lambda m=mood: set_mood(m)
+    )
+    btn.pack(side="left", padx=5)
+
+
+
+
+
+
+root.mainloop()
