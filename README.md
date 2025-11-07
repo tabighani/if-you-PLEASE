@@ -12,6 +12,16 @@ A minimal GUI application for habit and mood tracking; made for everyone!
 
 - Calendar feature to easily choose and log for certain days.
 
+# Technologies
+If You Please was made in Microsoft Visual Studio, utilising Python as the language and Tkinter library for design. 
+
+# Setup
+To begin setting up If You Please, ensure you have all the above listed tools installed. This includes
+- Microsoft Visual Studio https://visualstudio.microsoft.com/downloads/
+- Python 3.14.0 as per your computer operating system (MacOS, Linus, Windows, etc) https://www.python.org/downloads/
+- Tkinter Library extension via Microsoft Visual Studio
+- 
+
 
 
 
