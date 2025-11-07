@@ -1,5 +1,6 @@
 # If You PLEASE
 Coding prototype project for 52685 Working with Data and Code. By Tabassum Ghani 25046222
+
 A minimal GUI application for habit and mood tracking; made for everyone!
 
 # Key Features
@@ -10,4 +11,7 @@ A minimal GUI application for habit and mood tracking; made for everyone!
 - Features simple mood-tracking feature with emoji's
 
 - Calendar feature to easily choose and log for certain days.
+
+
+
 
